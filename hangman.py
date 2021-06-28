@@ -49,18 +49,4 @@ def hangman(word):
         print("Game over. You lose!")
     return word
 
-hangman("daniel")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+hangman("happy")
