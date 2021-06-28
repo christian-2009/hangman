@@ -1,6 +1,6 @@
 def check_word(letter, letters_guessed):
     while letter in letters_guessed or letter.isalpha() == False:
-        letter = input("not valid. Pick another letter/word ")
+        letter = input("Not valid. Pick another letter/word ")
 
 def hangman(word):
     lng = ""
@@ -13,7 +13,7 @@ def hangman(word):
     # 10 is the number of lives in hangman game
     while lives <= 10:
         if lng == word:
-            print("well done you guessed the word")
+            print("Well done you guessed the word")
             break
 
         # we allow user to choose a letter/word. Then proceed to check whether this is valid given the letters guessed list
@@ -43,10 +43,13 @@ def hangman(word):
         else:
             print("Well done you guessed a correct letter")
         print(lng)
-    print("out of lives")
+
+    if lives > 10:
+        print("Out of lives")
     return word
 
-hangman('word')
+hangman("happy")
+
 
 
 
