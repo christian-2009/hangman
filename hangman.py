@@ -9,7 +9,7 @@ def hangman(word):
     print("you have to guess from " + lng + " letters")
     lives = 0
     letters_guessed = []
-    nu_correct = 0
+    
     # 10 is the number of lives in hangman game
     while lives <= 10:
         if lng == word:
