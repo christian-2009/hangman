@@ -42,7 +42,7 @@ def hangman(word):
         #need to check whether any letters corresponded to a letter in word
         if a == 0:
             lives +=1
-            print("You guessed incorrectly. One life gone.")
+            print("You guessed incorrectly " + str(10 - lives) + " lives remaining.")
         elif a > 0:
             print("Well done you guessed a correct letter. Now guess from " + lng + ".")
         else:
@@ -52,7 +52,7 @@ def hangman(word):
         print("Game over. You lose!")
     return word
 
-hangman("happy")
+hangman("daniel")
 
 
 
