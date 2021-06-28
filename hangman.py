@@ -1,7 +1,3 @@
-def check_word(letter, letters_guessed):
-    while letter in letters_guessed or letter.isalpha() == False:
-        letter = input("Not valid. Pick another letter/word: ")
-
 def hangman(word):
     lng = ""
     for i in range(len(word)):
@@ -18,7 +14,8 @@ def hangman(word):
 
         # we allow user to choose a letter/word. Then proceed to check whether this is valid given the letters guessed list
         letter = input('Choose what letter you want to guess: ')
-        check_word(letter,letters_guessed)
+        while letter in letters_guessed or letter.isalpha() == False:
+            letter = input("Not valid. Pick another letter/word: ")
         letters_guessed.append(letter)
 
         #using a loop to check whether this letter corresponds to any letters in the word
@@ -42,7 +39,7 @@ def hangman(word):
         #need to check whether any letters corresponded to a letter in word
         if a == 0:
             lives +=1
-            print("You guessed incorrectly " + str(10 - lives) + " lives remaining.")
+            print("You guessed incorrectly " + str(10 - lives) + " lives remaining. Now guess from " + lng + ".")
         elif a > 0:
             print("Well done you guessed a correct letter. Now guess from " + lng + ".")
         else:
