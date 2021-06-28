@@ -29,9 +29,12 @@ def hangman(word):
                 a += 1
             elif len(letter) > 1 and letter != word:
                 print("Game over. You lose!")
+                lives = 11
+                a -= 1
                 break
             elif len(letter) > 1 and letter == word:
-                print('You guessed the correct word.')
+                lng = word
+                a -= 1
                 break
             else:
                 continue
@@ -40,9 +43,10 @@ def hangman(word):
         if a == 0:
             lives +=1
             print("You guessed incorrectly. One life gone")
-        else:
+        elif a > 0:
             print("Well done you guessed a correct letter")
-        print(lng)
+        else:
+            continue
 
     if lives > 10:
         print("Out of lives")
