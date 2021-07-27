@@ -19,25 +19,25 @@ def hangman(word):
         letters_guessed.append(letter)
 
         #using a loop to check whether this letter corresponds to any letters in the word
-        a = 0
+        counter = 0
         for i in range(0, len(word)):
             if (len(letter) == 1) and (word[i] == str(letter)):
                 lng = lng[:i] + letter + lng[i + 1:]
-                a += 1
+                counter += 1
             elif len(letter) > 1 and letter != word:
                 print("You guessed the wrong word.")
                 lives = 11
-                a -= 1
+                counter -= 1
                 break
             elif len(letter) > 1 and letter == word:
                 lng = word
-                a -= 1
+                counter -= 1
                 break
             else:
                 continue
 
         #need to check whether any letters corresponded to a letter in word
-        if a == 0:
+        if counter == 0:
             lives +=1
             print("You guessed incorrectly " + str(11 - lives) + " lives remaining. Now guess from " + lng + ".")
         elif a > 0:
