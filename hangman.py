@@ -40,7 +40,7 @@ def hangman(word):
         if counter == 0:
             lives +=1
             print("You guessed incorrectly " + str(11 - lives) + " lives remaining. Now guess from " + lng + ".")
-        elif a > 0:
+        elif counter > 0:
             print("Well done you guessed a correct letter. Now guess from " + lng + ".")
         else:
             continue
